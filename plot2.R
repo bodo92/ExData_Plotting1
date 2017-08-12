@@ -1,3 +1,22 @@
+## Store the current path to restore to at the end
+path <- getwd()
+
+## store the url of the dataset in a variable "fileurl"
+fileurl <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+
+## Download and unzip the dataset file if the file does not already exist on the computer
+if(!file.exists("~/Electric Power Consumption.zip")){
+    download.file(fileurl, destfile = "Electric Power Consumption.zip")
+}
+
+## Unzip the downloaded zip file
+if(!file.exists("~/Electric Power Consumption")){
+unzip("Electric Power Consumption.zip", exdir = "Electric Power Consumption")
+}
+
+## Set the working directory to folder containing the unzipped file(s)
+setwd("./Electric Power Consumption/")
+
 t <- read.table("household_power_consumption.txt", header=TRUE, sep=";", na.strings = "?", colClasses = c('character','character','numeric','numeric','numeric','numeric','numeric','numeric','numeric'))
 
 ## Format date to Type Date
