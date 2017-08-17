@@ -1,4 +1,6 @@
 ## Store the current path to restore to at the end
+dev.off()
+dev.off()
 path <- getwd()
 
 ## store the url of the dataset in a variable "fileurl"
@@ -55,4 +57,6 @@ t$dateTime <- as.POSIXct(dateTime)
 
 ## Save file and close device
 dev.copy(png,"plot3.png", width=480, height=480)
+dev.off()
+dev.off()
 dev.off()
