@@ -1,4 +1,6 @@
 ## Store the current path to restore to at the end
+dev.off()
+dev.off()
 path <- getwd()
 
 ## store the url of the dataset in a variable "fileurl"
